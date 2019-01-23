@@ -1118,7 +1118,8 @@ Must contain at least one condition.
 For example: `when { anyOf { branch 'master'; branch 'staging' } }`
 
 triggeredBy:: Execute the stage when the current build has been triggered by the param given.
-For example: `when { triggeredBy 'SCMTrigger' }`
+The param must reflect the (partial) class name of one of the standard link:https://javadoc.jenkins-ci.org/hudson/model/Cause.html[Cause]s or a derived class that is provided by a third-party plugin.
+For example: `when { triggeredBy 'SCMTrigger' }` or `when { triggeredBy 'UserIdCause' }`
 
 ===== Evaluating `when` before entering the `stage`'s `agent`
 
